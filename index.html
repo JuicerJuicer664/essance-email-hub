@@ -119,6 +119,16 @@ padding:13px 22px;cursor:pointer;}
 #gbtn:active{transform:scale(.97);}
 #gerr{margin:14px 0 0;font-size:13px;color:#a3552f;min-height:18px;}
 .gate-foot{margin-top:26px;font-size:11.5px;line-height:1.6;color:#a8ae9e;}
+.asset{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;
+margin:20px 0;display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap;
+box-shadow:0 1px 0 #fff inset,0 14px 34px -26px rgba(47,61,43,.5);}
+.asset img{width:190px;border-radius:10px;border:1px solid var(--line);display:block;flex:0 0 auto;}
+.asset-body{flex:1;min-width:240px;}
+.asset-body h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:23px;
+margin:0 0 4px;line-height:1.15;}
+.asset-body .timing{margin-bottom:10px;}
+.asset-body p{font-size:13.5px;line-height:1.6;color:#6a7363;margin:0 0 16px;}
+.asset .btn{text-decoration:none;display:inline-block;}
 @media(max-width:640px){.hero{padding-top:36px;} .card{padding:16px;} .fname{display:none;}}
 </style></head><body>
 
@@ -1204,6 +1214,33 @@ padding:13px 22px;cursor:pointer;}
     </article>
     </section>
   <div class="empty" id="empty">No templates match that search.</div>
+
+  <section class="cat" id="cat-assets">
+    <div class="chead2"><h2>Companion Assets</h2><p>Send alongside the outreach emails</p><span class="cc">1</span></div>
+
+    <article class="asset">
+      <img src="assets/media-kit-cover.jpg" alt="Essance Media Kit 2026 cover">
+      <div class="asset-body">
+        <h3>Essance Media Kit 2026</h3>
+        <div class="timing">For press, partners &amp; buyers</div>
+        <p>Brand story, founder background, product range and contact details.
+        Attach this to the <b>magazine / editor pitch</b>, or link it when a writer
+        asks for background.</p>
+        <a class="btn primary" href="assets/Essance-Media-Kit-2026.pdf" target="_blank" rel="noopener">Open the media kit (PDF)</a>
+      </div>
+    </article>
+
+    <article class="asset">
+      <div class="asset-body">
+        <h3>Wholesale Line Sheet 2026</h3>
+        <div class="timing">Not published here &mdash; shared with qualified buyers only</div>
+        <p>The line sheet lists <b>wholesale cost against MSRP, order minimums and UPCs</b>.
+        That pricing is deliberately kept off this public page so it isn't visible to
+        retailers, competitors or customers. Send it directly to a buyer who has asked
+        for it, or point them to <b>faire.com/brand/essance</b>.</p>
+      </div>
+    </article>
+  </section>
 </main>
 
 <div class="foot">
