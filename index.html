@@ -159,6 +159,7 @@ margin:0 0 4px;line-height:1.15;}
   </div>
   <div class="filters">
     <button class="fbtn on" data-filter="all">All <em>13</em></button>
+    <button class="fbtn" data-filter="assets">Media Kit &amp; Assets <em>2</em></button>
     <button class="fbtn" data-filter="welcome">Welcome Series <em>4</em></button><button class="fbtn" data-filter="campaign">Campaigns <em>2</em></button><button class="fbtn" data-filter="wholesale">Wholesale Outreach <em>2</em></button><button class="fbtn" data-filter="celebrity">Celebrity Seeding <em>2</em></button><button class="fbtn" data-filter="press">Press &amp; Editorial <em>1</em></button><button class="fbtn" data-filter="alt">Alternate Versions <em>2</em></button>
   </div>
 </header>
@@ -188,6 +189,34 @@ margin:0 0 4px;line-height:1.15;}
 </div>
 
 <main class="wrap">
+  <section class="cat" id="cat-assets" data-catsec="assets">
+    <div class="chead2"><h2>Companion Assets</h2><p>Send alongside the outreach emails</p><span class="cc">2</span></div>
+
+    <article class="asset" data-cat="assets" data-search="media kit press partners buyers pdf brand story companion asset">
+      <img src="assets/media-kit-cover.jpg" alt="Essance Media Kit 2026 cover">
+      <div class="asset-body">
+        <h3>Essance Media Kit 2026</h3>
+        <div class="timing">For press, partners &amp; buyers</div>
+        <p>Brand story, founder background, product range and contact details.
+        Attach this to the <b>magazine / editor pitch</b>, or link it when a writer
+        asks for background.</p>
+        <a class="btn primary" href="assets/Essance-Media-Kit-2026.pdf" target="_blank" rel="noopener">Open the media kit (PDF)</a>
+      </div>
+    </article>
+
+    <article class="asset" data-cat="assets" data-search="wholesale line sheet faire buyers pricing msrp companion asset">
+      <div class="asset-body">
+        <h3>Wholesale Line Sheet 2026</h3>
+        <div class="timing">Not published here &mdash; shared with qualified buyers only</div>
+        <p>The line sheet lists <b>wholesale cost against MSRP, order minimums and UPCs</b>.
+        That pricing is deliberately kept off this public page so it isn't visible to
+        retailers, competitors or customers. Send it directly to a buyer who has asked
+        for it, or point them to the Faire profile below.</p>
+        <a class="btn primary" href="https://www.faire.com/brand/b_ebf59cc3" target="_blank" rel="noopener">Essance on Faire</a>
+      </div>
+    </article>
+  </section>
+
   
     <section class="cat" id="cat-welcome" data-catsec="welcome">
       <div class="chead2"><h2>Welcome Series</h2><p>Marsello automation - subscriber nurture</p><span class="cc">4</span></div>
@@ -1214,34 +1243,6 @@ margin:0 0 4px;line-height:1.15;}
     </article>
     </section>
   <div class="empty" id="empty">No templates match that search.</div>
-
-  <section class="cat" id="cat-assets">
-    <div class="chead2"><h2>Companion Assets</h2><p>Send alongside the outreach emails</p><span class="cc">1</span></div>
-
-    <article class="asset">
-      <img src="assets/media-kit-cover.jpg" alt="Essance Media Kit 2026 cover">
-      <div class="asset-body">
-        <h3>Essance Media Kit 2026</h3>
-        <div class="timing">For press, partners &amp; buyers</div>
-        <p>Brand story, founder background, product range and contact details.
-        Attach this to the <b>magazine / editor pitch</b>, or link it when a writer
-        asks for background.</p>
-        <a class="btn primary" href="assets/Essance-Media-Kit-2026.pdf" target="_blank" rel="noopener">Open the media kit (PDF)</a>
-      </div>
-    </article>
-
-    <article class="asset">
-      <div class="asset-body">
-        <h3>Wholesale Line Sheet 2026</h3>
-        <div class="timing">Not published here &mdash; shared with qualified buyers only</div>
-        <p>The line sheet lists <b>wholesale cost against MSRP, order minimums and UPCs</b>.
-        That pricing is deliberately kept off this public page so it isn't visible to
-        retailers, competitors or customers. Send it directly to a buyer who has asked
-        for it, or point them to the Faire profile below.</p>
-        <a class="btn primary" href="https://www.faire.com/brand/b_ebf59cc3" target="_blank" rel="noopener">Essance on Faire</a>
-      </div>
-    </article>
-  </section>
 </main>
 
 <div class="foot">
@@ -1338,7 +1339,7 @@ if(document.fonts && document.fonts.ready){
 }
 
 /* search + category filter */
-var q=document.getElementById('q'), cards=[].slice.call(document.querySelectorAll('.card'));
+var q=document.getElementById('q'), cards=[].slice.call(document.querySelectorAll('.card, .asset'));
 var cat='all';
 function apply(){
   var term=(q.value||'').trim().toLowerCase(), shown=0;
@@ -1350,7 +1351,7 @@ function apply(){
     if(show) shown++;
   });
   document.querySelectorAll('[data-catsec]').forEach(function(s){
-    s.classList.toggle('hide', s.querySelectorAll('.card:not(.hide)').length===0);
+    s.classList.toggle('hide', s.querySelectorAll('.card:not(.hide), .asset:not(.hide)').length===0);
   });
   document.getElementById('empty').classList.toggle('show', shown===0);
 }
