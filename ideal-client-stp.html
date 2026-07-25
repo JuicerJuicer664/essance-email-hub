@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Essance &middot; Ideal Client &amp; STP</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#efeae0;--card:#f6f3ea;--ink:#2f3d2b;--green:#518C54;--lime:#a9cf5f;
+--muted:#8a9183;--line:#e2ddce;--deep:#4a5f3a;}
+*{box-sizing:border-box;} html{scroll-behavior:smooth;}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:'Manrope',-apple-system,'Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px 90px;}
+.hero{max-width:900px;margin:0 auto;padding:56px 24px 8px;}
+.eye{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--green);font-weight:800;margin:0 0 12px;}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(36px,6vw,58px);
+line-height:1.04;margin:0;letter-spacing:-.5px;}
+.sub{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;
+font-size:clamp(18px,2.4vw,23px);color:#75816b;margin:12px 0 0;}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:30px;
+margin:0 0 6px;border-top:1.5px solid var(--line);padding-top:28px;}
+h2 .n{color:var(--lime);margin-right:10px;}
+.lede{font-size:13px;color:var(--muted);margin:0 0 18px;}
+h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:21px;margin:22px 0 8px;}
+p{font-size:15px;line-height:1.72;color:#4a5140;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;margin:18px 0;
+box-shadow:0 1px 0 #fff inset,0 14px 34px -26px rgba(47,61,43,.5);}
+.persona{background:#eef3e7;border-color:#cdd9b8;}
+.persona p{font-size:16px;line-height:1.8;margin:0;}
+table{width:100%;border-collapse:collapse;margin:10px 0 0;}
+th,td{text-align:left;padding:9px 10px;font-size:14px;border-bottom:1px solid var(--line);vertical-align:top;}
+th{font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:var(--green);font-weight:800;}
+td.k{color:var(--muted);width:34%;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:14px;margin-top:16px;}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:17px 19px;}
+.tile h4{margin:0 0 6px;font-size:12px;letter-spacing:1.3px;text-transform:uppercase;color:var(--green);font-weight:800;}
+.tile p{margin:0;font-size:13.5px;line-height:1.6;color:#5b6b56;}
+.rank{display:flex;gap:14px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--line);}
+.rank:last-child{border-bottom:0;}
+.badge{flex:0 0 auto;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;font-weight:800;
+padding:6px 11px;border-radius:999px;white-space:nowrap;margin-top:2px;}
+.b1{background:var(--deep);color:#f6f3ea;}
+.b2{background:#dbe6cb;color:#3f5a33;}
+.b3{background:#efe6cf;color:#7a6326;}
+.b4{background:#e7e1d3;color:#77705f;}
+.rank b{display:block;font-size:15px;margin-bottom:3px;}
+.rank span{font-size:13.5px;line-height:1.6;color:#5b6b56;}
+.pos{background:var(--deep);color:#eef3e7;border-radius:18px;padding:26px 28px;margin:18px 0;}
+.pos p{color:#eef3e7;font-size:17px;line-height:1.75;margin:0;}
+.pos b{color:#fff;}
+.flag{background:#f4ecd9;border:1.5px solid #e0cfa8;border-radius:14px;padding:16px 20px;margin:16px 0;}
+.flag p{margin:0;font-size:14px;line-height:1.65;color:#5c4f2e;}
+.flag .t{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:800;color:#8a6d1f;margin:0 0 5px;}
+ul{margin:8px 0 0;padding-left:20px;} li{font-size:14.5px;line-height:1.7;color:#4a5140;margin-bottom:7px;}
+.note{max-width:900px;margin:22px auto 0;padding:0 24px;}
+.note-in{background:#f4ecd9;border:1.5px solid #e0cfa8;border-radius:14px;padding:16px 20px;}
+.note-in .t{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;font-weight:800;color:#8a6d1f;margin:0 0 5px;}
+.note-in p{margin:0;font-size:13.5px;line-height:1.65;color:#5c4f2e;}
+.src{font-size:12.5px;color:var(--muted);font-style:italic;margin-top:8px;}
+</style></head><body>
+
+<div class="note"><div class="note-in">
+  <p class="t">Working draft &middot; for discussion</p>
+  <p>Built from the completed ideal-client worksheet, cross-checked against Essance's
+  live Search Console data (last 90 days). Numbers are current as of July 2026 and will move.
+  The persona is a composite, not a real customer.</p>
+</div></div>
+
+<div class="hero">
+  <p class="eye">Segmentation &middot; Targeting &middot; Positioning</p>
+  <h1>Who Essance<br>is actually for</h1>
+  <p class="sub">One customer, sharply drawn &mdash; and what it means for design and marketing.</p>
+</div>
+
+<div class="wrap">
+
+  <h2><span class="n">01</span>The Ideal Client</h2>
+  <p class="lede">The one-paragraph answer the worksheet asks for.</p>
+
+  <div class="card persona">
+    <p><b>Maren is a 38-year-old nurse in the Portland metro.</b> She reads labels the way she reads
+    charts &mdash; skeptically, and all the way through &mdash; so "clean" only means something to her when
+    she can pronounce the ingredients and see who made them. Her weekends are trailheads and a
+    Subaru with dog hair in the back, her vacations are National Parks, and her skin pays for
+    all of it: wind, sun, long shifts, hard water. She buys from local boutiques and farmers
+    markets because she'd rather know the maker than the marketing, and once something works
+    she repurchases it for years without shopping around.</p>
+  </div>
+
+  <div class="card">
+    <h3>Snapshot</h3>
+    <table>
+      <tr><td class="k">Age &amp; gender</td><td>Mid-20s to late 40s, core 32&ndash;45. About 80% women, 20% men.</td></tr>
+      <tr><td class="k">Work</td><td>Nurse &mdash; and by extension healthcare, teaching, caregiving professions.</td></tr>
+      <tr><td class="k">Where</td><td>Portland metro or a smaller PNW town. Subaru. PTA involved.</td></tr>
+      <tr><td class="k">Household</td><td>Single or partnered. If she has kids, they are teenagers.</td></tr>
+      <tr><td class="k">Free time</td><td>Hiking, running, reading (action, thriller, romance, adventure).</td></tr>
+      <tr><td class="k">Fitness</td><td>Pilates, yoga, running.</td></tr>
+      <tr><td class="k">Media</td><td>Clean-living magazines. Action TV. Occasional romance film.</td></tr>
+      <tr><td class="k">Shops</td><td>Local boutiques. Comfortable clothes in natural materials.</td></tr>
+      <tr><td class="k">Eats</td><td>Local and healthy over chains. Hosts small dinners, not big parties.</td></tr>
+    </table>
+  </div>
+
+  <h2><span class="n">02</span>Reality check</h2>
+  <p class="lede">Where the live data agrees with the worksheet &mdash; and where it does not.</p>
+
+  <div class="grid">
+    <div class="tile"><h4>Confirmed &middot; local works</h4>
+      <p>"essance skincare portland" ranks in position 1.2 with a 32.7% click-through rate.
+      When someone searches Essance locally, they land and they click. The PNW focus is real.</p></div>
+    <div class="tile"><h4>Confirmed &middot; teens matter</h4>
+      <p>A whole teen-acne content cluster already ranks. That lines up exactly with
+      "if she has kids, they are teenagers" &mdash; she is buying for two skins, not one.</p></div>
+    <div class="tile"><h4>Correction &middot; Dragon's Blood is the magnet</h4>
+      <p>Nearly all non-brand search demand is Dragon's Blood, not the catalogue.
+      It is the door people come through. The rest of the range is discovered after.</p></div>
+    <div class="tile"><h4>Caution &middot; the traffic is not all her</h4>
+      <p>Only 65% of clicks are US. Colombia is the #3 country. Roughly 11% comes from
+      Spanish-speaking countries searching "sangre de drago" &mdash; real readers, but mostly
+      not people who can buy from a small Portland brand.</p></div>
+  </div>
+
+  <div class="flag">
+    <p class="t">Fix this line in the worksheet</p>
+    <p>The summary currently reads "mostly millennial, or women in their late 40s." Those are two
+    different generations with different platforms, budgets and skin concerns &mdash; a 28-year-old
+    on TikTok worried about breakouts is not a 47-year-old on Facebook worried about firmness.
+    Pick <b>one</b> as primary. The rest of the worksheet points clearly at the late-30s
+    professional, so that is what this document assumes.</p>
+  </div>
+
+  <h2><span class="n">03</span>Segmentation</h2>
+  <p class="lede">The distinct groups actually buying, in Essance's real world.</p>
+
+  <div class="card">
+    <div class="rank"><span class="badge b1">Primary</span><div>
+      <b>The Label Reader</b><span>Maren. PNW woman 32&ndash;45, professional, ingredient-literate,
+      buys a routine and re-buys it. Highest lifetime value. Everything else is secondary to her.</span></div></div>
+    <div class="rank"><span class="badge b2">Secondary</span><div>
+      <b>Household Buyer &middot; mom of a teen</b><span>The same woman, second wallet. Buying gentle,
+      non-stripping products for a teenager's breakouts. Already served by ranking content, not yet by
+      a clear product path.</span></div></div>
+    <div class="rank"><span class="badge b3">Seasonal</span><div>
+      <b>The Gift Buyer</b><span>Sets and boxes at Mother's Day, holidays and markets. Often not the
+      end user &mdash; needs the product to look giftable and explain itself without a routine.</span></div></div>
+    <div class="rank"><span class="badge b4">Separate motion</span><div>
+      <b>Wholesale &middot; boutiques &amp; spas</b><span>A buyer, not a consumer. Cares about margin,
+      case minimums, reorder rate and shelf appeal. Reached through Faire, the line sheet and
+      1:1 outreach &mdash; not consumer marketing.</span></div></div>
+    <div class="rank"><span class="badge b4">Small</span><div>
+      <b>Men &middot; CharCo</b><span>Roughly 20%. Often introduced by a partner. Worth keeping,
+      not worth leading with.</span></div></div>
+  </div>
+
+  <h2><span class="n">04</span>Targeting</h2>
+  <p class="lede">Where the effort goes, in order.</p>
+  <ul>
+    <li><b>Lead with the Label Reader.</b> She has the highest repeat rate and she is the one
+    who tells three friends. Every consumer decision gets made for her first.</li>
+    <li><b>Capture her second purchase &mdash; the teen.</b> The content already ranks; what is missing
+    is an obvious "for teens" path from that content into product. Cheapest available win.</li>
+    <li><b>Farm Dragon's Blood as the front door.</b> It is what people search. Let it earn the
+    click, then route to the full routine rather than trying to rank the whole catalogue.</li>
+    <li><b>Run wholesale as its own motion.</b> Different message, different assets, different
+    cadence. Do not blend it into consumer email.</li>
+    <li><b>Do not chase the international Dragon's Blood traffic.</b> It flatters the analytics and
+    does not convert. Judge content on US clicks, not total clicks.</li>
+  </ul>
+
+  <h2><span class="n">05</span>Positioning</h2>
+  <p class="lede">One sentence everything else has to agree with.</p>
+
+  <div class="pos">
+    <p>For <b>PNW women who read the label before they read the claim</b>, Essance is the
+    <b>small-batch skincare house</b> that makes plant-based, food-grade formulas
+    <b>by hand in Portland</b> &mdash; because the founder still blends them herself,
+    not a contract manufacturer.</p>
+  </div>
+
+  <div class="grid">
+    <div class="tile"><h4>Proof we can stand behind</h4>
+      <p>Made by hand in small batches in Portland. Women-owned and minority-owned. Plant-based and
+      cruelty-free. Food-grade, organic ingredients. Glass recycling program. Since 2011.</p></div>
+    <div class="tile"><h4>The hero</h4>
+      <p>Dragon's Blood &mdash; a red Amazonian resin (Croton lechleri) used for centuries.
+      Unusual enough to be a story, effective enough to be a repeat purchase.</p></div>
+    <div class="tile"><h4>What we do not claim</h4>
+      <p>No clinical, dermatologist-tested, or medical language. No award claims we cannot cite.
+      She is a nurse &mdash; an unsupported claim costs more trust than it buys.</p></div>
+    <div class="tile"><h4>The real competition</h4>
+      <p>Not drugstore. It is the other small clean brand on the same boutique shelf, and the
+      big "clean" labels with better budgets. We win on maker, not on price.</p></div>
+  </div>
+
+  <h2><span class="n">06</span>What this means for design</h2>
+  <div class="card">
+    <h3>Hold these</h3>
+    <ul>
+      <li><b>Real photography, always.</b> She shops boutiques to see the actual thing. Stock or
+      generated product imagery reads as mass-market &mdash; the exact thing she is avoiding.</li>
+      <li><b>Show texture.</b> Open jars, swatches, what it looks like on skin. She wants to know
+      how it feels before she pays for it.</li>
+      <li><b>Ingredients visible, not buried.</b> Put the list where she can find it. She will look
+      regardless; make it feel like confidence rather than fine print.</li>
+      <li><b>Natural materials, quiet palette.</b> Cream, forest green, real paper texture. The
+      existing brand palette is correct &mdash; the risk is drifting glossier, not staying too plain.</li>
+      <li><b>Legible over clever.</b> She reads on a phone between shifts. Generous type,
+      short blocks, no decorative fonts for body copy.</li>
+    </ul>
+    <h3>Avoid these</h3>
+    <ul>
+      <li>Clinical/lab visual language &mdash; it invites scrutiny the brand cannot support.</li>
+      <li>Luxury-gloss cues (foil, heavy gradients, dramatic shadow). Wrong signal for a maker brand.</li>
+      <li>Youth-coded design. She is not the 22-year-old TikTok skincare buyer.</li>
+    </ul>
+  </div>
+
+  <h2><span class="n">07</span>What this means for marketing</h2>
+  <div class="grid">
+    <div class="tile"><h4>Channels that fit her</h4>
+      <p>Local boutiques and farmers markets. Organic search (already working). Clean-living
+      magazines &mdash; she reads them, which is exactly why the press pitch targets them.
+      Instagram for texture and process, not trends.</p></div>
+    <div class="tile"><h4>Content that earns her</h4>
+      <p>Ingredient explainers, routine order, what to use for what. Teen skincare for her kids.
+      Founder and process content &mdash; who made this, in what room.</p></div>
+    <div class="tile"><h4>The objection to answer</h4>
+      <p>"Why does this cost more than the drugstore?" Answer with batch size, ingredient grade and
+      the person making it. Never answer with a discount &mdash; discounting teaches her to wait.</p></div>
+    <div class="tile"><h4>Practical notes</h4>
+      <p>She works shifts, so send email early morning or late evening, not mid-afternoon.
+      Travel and trail sizes suit her actual life. Seasonal skin (wind, sun, hard water)
+      is a better hook than seasonal marketing.</p></div>
+  </div>
+
+  <h2><span class="n">08</span>Open questions</h2>
+  <p class="lede">Worth settling with Jasmine before this drives spend.</p>
+  <ul>
+    <li><b>Millennial or Gen X?</b> The worksheet says both. Choose the primary; the other becomes
+    a secondary message, not an equal one.</li>
+    <li><b>Is the US Hispanic market a real target?</b> "Sangre de drago" is culturally familiar and
+    Dragon's Blood already ranks for it. That could be a genuine segment &mdash; or a distraction.
+    It deserves a decision rather than drift.</li>
+    <li><b>Do we want the teen buyer explicitly?</b> The content is already there. If yes, it needs a
+    product path. If no, that content should route to the parent instead.</li>
+    <li><b>What is the actual repeat rate?</b> This whole document assumes she re-buys. Worth
+    confirming from Shopify before betting the strategy on it.</li>
+  </ul>
+
+  <p class="src">Sources: completed ideal-client worksheet (Sarah Shaw playbook); Essance Google Search
+  Console, 24 Apr &ndash; 24 Jul 2026; Essance product catalogue and wholesale line sheet.</p>
+
+</div>
+</body></html>
